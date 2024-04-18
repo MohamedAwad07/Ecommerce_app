@@ -158,15 +158,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       height: 20.0,
                     ),
                     // sign up with google button
-                    defaultMaterialButton(
-                      valid: () {},
-                      text: 'Sign up with Google',
-                      borderColor: Color(0xFF3A2A08),
-                      containerColor: Colors.white,
-                      haveBorder: true,
-                      textColor: Color(0xFF3A2A08),
-                      isGoogle: true,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

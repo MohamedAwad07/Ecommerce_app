@@ -481,15 +481,19 @@ Widget myItems(
                         // mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            // height: 20,
-                            // width: double.infinity,
-                            // color: Colors.red,
+
+                            constraints:BoxConstraints(
+                              maxWidth: 150,
+                            ) ,
                             child: Text(
                               title,
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
+
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           Column(
@@ -499,15 +503,24 @@ Widget myItems(
                                 "\$${(price - price * (discount / 100)).toStringAsFixed(1)}",
                                 style: TextStyle(
                                     color: Colors.black,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w500),
                               ),
-                              Text(
-                                "\$${price}",
-                                style: TextStyle(
-                                  color: Color(0xff7d7d7d),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  decoration: TextDecoration.lineThrough,
+                              SizedBox(
+                                height: 2,
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.only(
+                                  end: 2,
+                                ),
+                                child: Text(
+                                  "\$$price",
+                                  style: TextStyle(
+                                    color: Color(0xff7d7d7d),
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                    decoration: TextDecoration.lineThrough,
+                                  ),
                                 ),
                               ),
                             ],

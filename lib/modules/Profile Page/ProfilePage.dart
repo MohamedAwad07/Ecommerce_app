@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nemo_app/modules/Login%20Page/LoginScreen.dart';
 import '../../shared/components/components.dart';
 import '../../shared/constants/constants.dart';
 
@@ -15,6 +16,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool passEnable = false;
   bool addressEnable = false;
   bool phoneEnable = false;
+
   // var name = userController.text;
   // var pass = passController.text;
   @override
@@ -41,23 +43,6 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Stack(
               //alignment: Alignment.bottomRight,
               children: [
-                // Positioned(
-                //     top: 5,
-                //     left: 15,
-                //     child: Row(
-                //       children: [
-                //         SizedBox(
-                //           width: 20,
-                //         ),
-                //         Text(
-                //           "Yusfgus",
-                //           style: TextStyle(
-                //               color: Colors.white,
-                //               fontSize: 28,
-                //               fontWeight: FontWeight.w500),
-                //         ),
-                //       ],
-                //     )),
                 Positioned(
                   bottom: 0,
                   right: 38,
@@ -94,28 +79,39 @@ class _ProfilePageState extends State<ProfilePage> {
                     enable: addressEnable),
                 UserInfo(
                     title: "Phone number",
-                    value: "01158689513",
+                    value: "01095008858",
                     icon: Icons.phone,
                     enable: phoneEnable),
+                Spacer(),
+                Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 150,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.only(
+                      bottom: 20,
+                    ),
+                    child: defaultMaterialButton(
+                      text: 'Log out',
+                      isGoogle: false,
+                      containerColor: Colors.red,
+                      haveBorder: false,
+                      textColor: Colors.white,
+                      borderColor: Colors.transparent,
+                      valid: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
-              Row(
-                children: [
-                  MaterialButton(
-                      onPressed: () async {
-                        await sqlDb.printDatabase();
-                      },
-                    child: Text("Display Data"),
-                  ),
-                  MaterialButton(
-                      onPressed: () async {
-                        await sqlDb.deleteRows();
-                      },
-                    child: Text("Delete Data"),
-                  ),
-                ],
-              )
         ],
       ),
     ));

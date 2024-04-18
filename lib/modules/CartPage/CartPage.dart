@@ -151,7 +151,7 @@ class _CartPageState extends State<CartPage> {
                                       pro[0]['title'],
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20,
+                                          fontSize: 15,
                                           color: Colors.grey.shade700),
                                     ),
                                     Expanded(
@@ -163,7 +163,7 @@ class _CartPageState extends State<CartPage> {
                                       "\$${(pro[0]['price'] - pro[0]['price']*(pro[0]['discountPercentage']/100)).toStringAsFixed(1)}",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 18),
+                                          fontSize: 15),
                                     ),
                                   ],
                                 ),
@@ -190,7 +190,7 @@ class _CartPageState extends State<CartPage> {
                                 padding: const EdgeInsetsDirectional.only(
                                     start: 25.0),
                                 child: Text(
-                                  "gus : ",
+                                  "Total price  : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20),

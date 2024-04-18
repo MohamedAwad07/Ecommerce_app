@@ -60,10 +60,6 @@ class _SecondPageState extends State<SplashScreen> {
   bool _d = false;
   bool _e = false;
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {

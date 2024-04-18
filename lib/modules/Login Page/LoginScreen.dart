@@ -19,12 +19,7 @@ class _RegisterScreenState extends State<LoginScreen> {
   var formKey = GlobalKey<FormState>();
 
 
-  @override
-  void dispose() {
-    super.dispose();
-    userController.dispose();
-    passController.dispose();
-  }
+
 
   Future signIn() async {
     FirebaseAuth.instance
